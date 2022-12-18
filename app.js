@@ -1,14 +1,17 @@
 const express = require('express');
+const cors = require('cors');
+
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 const port = 3030;
-
-const cors = require('cors')
 
 app.use(cors())
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+
+app.use('/v1/user', userRoutes);
 
 app.listen(port, () => {
     console.log('Server started on port: ' + port)
