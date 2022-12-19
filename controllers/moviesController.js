@@ -1,4 +1,4 @@
-const userService = require('../services/userService');
+const moviesService = require('../services/moviesService');
 
 //
 const moviesController = {
