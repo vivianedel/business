@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 app.use('/v1/user', userRoutes);
-app.use('/v2/movies', moviesRoutes);
+app.use('/v1/movies', moviesRoutes);
 
 app.listen(port, () => {
     console.log('Server started on port: ' + port)
