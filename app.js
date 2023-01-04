@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const userRoutes = require("./routes/userRoutes");
-const moviesRoutes = require("./routes/moviesRoutes");
+const promotionsRoutes = require("./routes/promotionsRoutes");
 const models = require("./models");
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use("/v1/user", userRoutes);
-app.use("/v1/movies", moviesRoutes);
+app.use("/v1/promotions", promotionsRoutes);
 
 app.listen(port, () => {
   console.log("Server started on port: " + port);
