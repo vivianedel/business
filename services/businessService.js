@@ -1,9 +1,9 @@
 
-const promotionsService = {
-    getPromotions: async (req, res) => {
+const businessService = {
+    getBusiness: async (req, res) => {
       try {
         
-        res.status(200).json("get promotionsgit path");
+        res.status(200).json("get businessgit path");
       } catch (error) {
         res.status(500).json({
           date: new Date(),
@@ -15,4 +15,4 @@ const promotionsService = {
   
   };
   
-  module.exports = promotionsService;
+  module.exports = businessService;
