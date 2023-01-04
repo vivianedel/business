@@ -1,4 +1,4 @@
-const promotionsService = require('../services/moviesService');
+const promotionsService = require('../services/promotionsService');
 
 //
 const promotionsController = {
