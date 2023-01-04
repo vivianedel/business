@@ -1,7 +1,7 @@
 {
-  "name": "promotions-network",
+  "name": "business",
   "version": "1.0.0",
-  "description": "This application allows users to create movies wish lists.",
+  "description": "This application allows users to create business wish lists.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivianedel/promotions-network.git"
+    "url": "git+https://github.com/vivianedel/business.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vivianedel/promotions-network/issues"
+    "url": "https://github.com/vivianedel/business/issues"
   },
-  "homepage": "https://github.com/vivianedel/promotions-network#readme",
+  "homepage": "https://github.com/vivianedel/business#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
