@@ -1,9 +1,9 @@
 
-const moviesService = {
-    getMovies: async (req, res) => {
+const promotionsService = {
+    getPromotions: async (req, res) => {
       try {
         
-        res.status(200).json("get moviesgit path");
+        res.status(200).json("get promotionsgit path");
       } catch (error) {
         res.status(500).json({
           date: new Date(),
@@ -15,4 +15,4 @@ const moviesService = {
   
   };
   
-  module.exports = moviesService;
+  module.exports = promotionsService;
