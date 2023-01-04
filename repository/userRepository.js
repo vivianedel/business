@@ -31,10 +31,10 @@ const userRepository = {
         }
     },
 
-    Pesquisar: async (id) => {
+    SearchById: async (id) => {
         try {
-            const localizado = await models.usuarios.findByPk(id)
-            return localizado
+            const userData = await models.users.findByPk(id)
+            return userData
         } catch (error) {
             return error
         }

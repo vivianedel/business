@@ -1,5 +1,5 @@
 CREATE TABLE Users (
-    user_id int NOT NULL AUTO_INCREMENT,
+    id int NOT NULL AUTO_INCREMENT,
     first_name varchar(255) NOT NULL,
     user_type varchar(255) NOT NULL,
     last_name varchar(255) NOT NULL,
@@ -7,5 +7,5 @@ CREATE TABLE Users (
     email varchar(255) NOT NULL,
     categories_ids SETz,
     password varchar(255) NOT NULL,
-    PRIMARY KEY (user_id)	
+    PRIMARY KEY (id)	
 );

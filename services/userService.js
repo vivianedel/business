@@ -5,16 +5,30 @@ const userRepository = require('../repository/userRepository');
 const userService = {
   getUser: async (req, res) => {
     try {
-      
-      res.status(200).json("get users path");
+        let userData = await userRepository.SearchById(req.params.id);
+        if (userData) {
+            res.status(200).json({
+                date: new Date(),
+                code: 200,
+                userData
+            });
+        } else {
+            res.status(200).json({
+                date: new Date(),
+                code: 200,
+                message: "User not found!"
+            });
+        }
     } catch (error) {
-      res.status(500).json({
-        date: new Date(),
-        code: 500,
-        message: error,
-      });
+        res.status(500).json({
+
+            date: new Date(),
+            code: 500,
+            message: error
+
+        });
     }
-  },
+},
   postUser: async (req, res) => {
 
     try {
