@@ -1,5 +1,5 @@
 {
-  "name": "movies",
+  "name": "promotions-network",
   "version": "1.0.0",
   "description": "This application allows users to create movies wish lists.",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivianedel/movies.git"
+    "url": "git+https://github.com/vivianedel/promotions-network.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vivianedel/movies/issues"
+    "url": "https://github.com/vivianedel/promotions-network/issues"
   },
-  "homepage": "https://github.com/vivianedel/movies#readme",
+  "homepage": "https://github.com/vivianedel/promotions-network#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
