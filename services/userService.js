@@ -1,6 +1,7 @@
 
 const bcrypt = require('bcrypt');
 const userRepository = require('../repository/userRepository');
+const auth = require('../common/auth')
 
 const userService = {
   getUser: async (req, res) => {
@@ -37,8 +38,8 @@ const userService = {
 
         let created = await userRepository.Register(bodyCopy);
 
-        //let bearer = "";
-        //if (criado.id) { bearer = await autenticacao.gerarJWT(criado.id, '1d'); } else { bearer = ""; }
+        let bearer = "";
+        if (created.id) { bearer = await auth.gerarJWT(created.id, '1d'); } else { bearer = ""; }
 
         res.status(200).json({
 
@@ -61,6 +62,57 @@ const userService = {
     }
 
 },
+
+ userAuth: async (req, res) => {
+
+        try {
+
+            let { email, password } = req.body;
+
+            let found = await userRepository.searchByEmail(email);
+
+
+            if (found && bcrypt.compareSync(password, found.dataValues.password)) {
+
+
+                let bearer = await auth.generateJWT(found.dataValues.id, '1d');
+                res.status(200).send(
+
+                    {
+                        date: new Date(),
+                        code: 200,
+                        id: found.id,
+                        nome: found.nome,
+                        token: bearer
+                    }
+
+                );
+
+            } else {
+                res.status(200).send(
+                    {
+                        date: new Date(),
+                        code: 200,
+                        message: "Usuário ou senha inválidos"
+                    }
+
+                );
+            }
+
+        } catch (error) {
+            console.log(error)
+            res.status(500).send(
+                {
+                    date: new Date(),
+                    code: 500,
+                    message: error
+                }
+
+            );
+        }
+    },
+
+  
 
 };
 

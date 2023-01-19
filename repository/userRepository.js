@@ -40,14 +40,14 @@ const userRepository = {
         }
     },
 
-    PesquisarEmail: async (email) => {
+    searchByEmail: async (email) => {
         try {
-            let localizado = await models.usuarios.findOne({
+            let found = await models.users.findOne({
                 where: {
                     email: email
                 }
             });
-            return localizado
+            return found
         } catch (error) {
             return error
         }
